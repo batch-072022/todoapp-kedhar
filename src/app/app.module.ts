@@ -13,6 +13,9 @@ import { ListTasksComponent } from './list-tasks/list-tasks.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EdituserComponent } from './edituser/edituser.component';
+import { ViewuserComponent } from './viewuser/viewuser.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,16 @@ import { HomeComponent } from './home/home.component';
     ListTasksComponent,
     EditTaskComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    EdituserComponent,
+    ViewuserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

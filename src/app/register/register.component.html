@@ -1,18 +1,35 @@
-<form action="action_page.php">
-    <div class="container">
-      <h1>Registeration Form</h1>
-      <hr>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" id="email" required>
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-  
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-      <hr>
-      <button type="submit" class="registerbtn">Register</button>
-    </div>
-  
-    
-  </form>
+<h1>Registration Form</h1>
+<!--Interpolation {{propertyname}}-->
+<h3>Interpolation</h3>
+Name: {{name}}
+<h3>Structural Directive - *ngIf</h3>
+<!--Directives ( Structural Directives -If/for)-->
+<div *ngIf="isValidUser">
+  Valid User
+</div>
+<!--For Loop-->
+<!--<ul>
+  <li>CSE</li>
+  <li>IT</li>
+  <li>MECH</li>
+  <li>CIVIL</li>
+</ul>-->
+<h3>Structural Directive -*ngIf</h3>
+<ul>
+  <li *ngFor="let d of departments">{{d}}</li>
+</ul>
+<table border="1">
+  <thead><tr><th>S.NO</th><th>Name</th></tr></thead>
+  <tbody>
+    <tr *ngFor="let d of departments;let i=index">
+      <td>{{i+1}}</td>
+      <td>{{d}}</td>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <select name ="dept" id ="dept">
+    <option *ngFor="let d of departments">{{d}}</option>
+  </select>
+</table>
+<button type="Button" (click)="onClick()">submit</button>

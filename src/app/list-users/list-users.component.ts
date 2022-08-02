@@ -11,5 +11,13 @@ export class ListUsersComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  //users!:any;
+  users=[
+    {name:"kedhar reddy",email:"kedharreddy21@gmail.com"},
+    {name:"kedhar reddy",email:"kedharreddy21@gmail.com"}
+  
+  ];
+  deleteuser(){
+    alert("Sucsessfully deleted");
+  }
 }

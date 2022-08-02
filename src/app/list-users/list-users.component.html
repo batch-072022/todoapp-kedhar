@@ -1,28 +1,25 @@
-<table border="3">
+<h1>USER TABLE</h1>
+<table class="table table-bordered" *ngIf="users">
     <thead>
-        <th>S.NO</th>
-        <th>NAME</th>
-        <th>COMPANY</th>
-        <th>ID</th>
+        <tr><th>S.NO</th>
+            <th>Name</th>
+            <th>Action</th>
+        
+        </tr>
     </thead>
-<tbody>
-    <tr>
-        <td>1</td>
-        <td>Kedhar Reddy</td>
-        <td>Valuemomentum</td>
-        <td>VAM123</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Roopesh</td>
-        <td>Valuemomentum</td>
-        <td>VAM123</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>Younus</td>
-        <td>valuemomentum</td>
-        <td>VAM123</td>
-    </tr>
-</tbody>
+    <body *ngIf="users">
+        <tr *ngFor="let u of users;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>
+                <a routerLink="/viewuser" class="btn btn-dark">View</a> &nbsp;
+                <a routerLink="/editusers"class="btn btn-info">edit</a> &nbsp;
+                <button type="button" (click)="deleteuser()" class="btn btn-danger">Delete</button>
+            </td> 
+        </tr>
+    </body>
 </table>
+<!--<div *ngIf="!users">
+    There are no records
+</div>-->
